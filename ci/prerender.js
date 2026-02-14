@@ -39,10 +39,10 @@ try {
 }
 
 const routes = productIds.map(id => `/catalogs/${catalogId}/templates/${id}`);
-routes.push(`/catalogs/${catalogId}`)
+// routes.push(`/catalogs/${catalogId}`)
 
-const crop_widgets = ["square","rect","circle","ellipse","round-corners-2","cone","path"]
-for(let widget of crop_widgets) routes.push(`/crop/${widget}`)
+// const crop_widgets = ["square","rect","circle","ellipse","round-corners-2","cone","path"]
+// for(let widget of crop_widgets) routes.push(`/crop/${widget}`)
 
 
 async function main() {
