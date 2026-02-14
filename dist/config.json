@@ -1,0 +1,6 @@
+{
+    "apiServerUrl": "https://127.0.0.1:8077",
+    "rootDomain":"https://172.20.5.5.nip.io",
+    "defaultLang" : "en",
+    "name" :"SublimationApp"
+}
