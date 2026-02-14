@@ -52,12 +52,18 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
 
-    # 3. Fetch and merge template
-    - name: Initialize and Track
+    # 3. 
+    # - name: Initialize and Track
+    #   run: |
+    #     git lfs install
+    #     git lfs track "*.zip"
+    #     git add .gitattributes                # needed when `git lfs track` is used
+    #     git commit -m "LFS init implemented"  # needed when `git lfs track` is used
+    #     git push origin main
+
+        # 3. Fetch and merge template
+    - name: Initialize with existing zip files
       run: |
         git lfs install
-        git lfs track "*.zip"
-        # Important: .gitattributes must be added first
-        git add .gitattributes
-        git commit -m "LFS init implemented"
-        git push origin main
+        git lfs migrate import --include="*.zip" --everything
+        git push origin main --force
