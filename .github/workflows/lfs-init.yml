@@ -5,16 +5,16 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  MAIN_TEMPLATE: "SublimationApp/sublimationapp.github.io"
+
 permissions:
   contents: write
 
 concurrency:
   group: lfs-init
   cancel-in-progress: true
-
-env:
-  MAIN_TEMPLATE: "SublimationApp/sublimationapp.github.io"
-
+ 
 jobs:
   check-lfs:
     if: github.repository != env.MAIN_TEMPLATE
