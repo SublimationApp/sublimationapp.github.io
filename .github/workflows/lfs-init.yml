@@ -17,16 +17,18 @@ concurrency:
  
 jobs:
   check-lfs:
-    if: github.repository != env.MAIN_TEMPLATE
+    
     runs-on: ubuntu-latest
     outputs:
       lfs_configured: ${{ steps.check.outputs.lfs_configured }}
 
     steps:
     - uses: actions/checkout@v6
+      if: github.repository != env.MAIN_TEMPLATE
 
     - name: Check if LFS is configured
       id: check
+      if: github.repository != env.MAIN_TEMPLATE
       run: |
         # Look for 'filter=lfs' in .gitattributes
         if [ -f .gitattributes ] && grep -q "filter=lfs" .gitattributes; then
